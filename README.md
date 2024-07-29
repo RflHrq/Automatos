@@ -1,59 +1,67 @@
 # Automatos
-Descrição
-Este projeto implementa a criação e manipulação de Autômatos Finitos Não Determinísticos (AFN) e Autômatos Finitos Determinísticos (AFD), incluindo a conversão de um AFN para um AFD e a minimização do AFD. O código permite a definição interativa de um AFN, a conversão automática para AFD e a minimização do AFD. Também é possível testar se uma palavra é aceita pelo AFN, AFD e AFD minimizado.
 
-Estrutura do Projeto
-Classes
-AFN (Autômato Finito Não Determinístico)
-__init__: Inicializa um AFN vazio com estados, alfabeto, estado inicial, estados finais e transições.
-add_state: Adiciona um estado ao AFN.
-add_alphabet_symbol: Adiciona um símbolo ao alfabeto do AFN.
-set_initial_state: Define o estado inicial do AFN.
-add_final_state: Adiciona um estado final ao AFN.
-add_transition: Adiciona uma transição ao AFN.
-_dfs: Realiza uma busca em profundidade para verificar a aceitação de uma palavra.
-accepts: Verifica se uma palavra é aceita pelo AFN.
+## Descrição
+Este projeto implementa a criação e manipulação de Autômatos Finitos Não Determinísticos (AFN) e Autômatos Finitos Determinísticos (AFD). As funcionalidades incluem:
 
-AFD (Autômato Finito Determinístico)
-__init__: Inicializa um AFD vazio com estados, alfabeto, estado inicial, estados finais e transições.
-add_state: Adiciona um estado ao AFD.
-add_alphabet_symbol: Adiciona um símbolo ao alfabeto do AFD.
-set_initial_state: Define o estado inicial do AFD.
-add_final_state: Adiciona um estado final ao AFD.
-add_transition: Adiciona uma transição ao AFD.
-set_dead_state: Define e adiciona o estado buraco ao AFD.
-minimize: Minimiza o AFD.
-split_block: Divide um bloco de estados para a minimização.
-find_block: Encontra o bloco de um estado para a minimização.
-accepts: Verifica se uma palavra é aceita pelo AFD.
-Funções
-afn_para_afd: Converte um AFN em um AFD.
-print_afn: Imprime o AFN.
-print_afd: Imprime o AFD.
+- Criação e definição interativa de um AFN.
+- Conversão automática de um AFN para um AFD.
+- Minimização do AFD.
+- Teste de aceitação de palavras pelo AFN, AFD e AFD minimizado.
 
-#Interação do Usuário
+## Estrutura do Projeto
 
-1. Inserir um AFN
-O usuário é solicitado a inserir estados, símbolos do alfabeto, estado inicial, estados finais e transições do AFN.
+### Classes
 
-Inserir Estados: O usuário insere os estados um por um.
-Inserir Alfabeto: O usuário insere os símbolos do alfabeto um por um.
-Definir Estado Inicial: O usuário define o estado inicial.
-Definir Estados Finais: O usuário define os estados finais um por um.
-Inserir Transições: O usuário insere as transições no formato estado,símbolo,estados_destino.
+**AFN (Autômato Finito Não Determinístico)**
+- `__init__`: Inicializa um AFN vazio com estados, alfabeto, estado inicial, estados finais e transições.
+- `add_state`: Adiciona um estado ao AFN.
+- `add_alphabet_symbol`: Adiciona um símbolo ao alfabeto do AFN.
+- `set_initial_state`: Define o estado inicial do AFN.
+- `add_final_state`: Adiciona um estado final ao AFN.
+- `add_transition`: Adiciona uma transição ao AFN.
+- `_dfs`: Realiza uma busca em profundidade para verificar a aceitação de uma palavra.
+- `accepts`: Verifica se uma palavra é aceita pelo AFN.
 
-#2. Converter AFN para AFD
-A função afn_para_afd é usada para converter o AFN definido pelo usuário em um AFD equivalente.
+**AFD (Autômato Finito Determinístico)**
+- `__init__`: Inicializa um AFD vazio com estados, alfabeto, estado inicial, estados finais e transições.
+- `add_state`: Adiciona um estado ao AFD.
+- `add_alphabet_symbol`: Adiciona um símbolo ao alfabeto do AFD.
+- `set_initial_state`: Define o estado inicial do AFD.
+- `add_final_state`: Adiciona um estado final ao AFD.
+- `add_transition`: Adiciona uma transição ao AFD.
+- `set_dead_state`: Define e adiciona o estado buraco ao AFD.
+- `minimize`: Minimiza o AFD.
+- `split_block`: Divide um bloco de estados para a minimização.
+- `find_block`: Encontra o bloco de um estado para a minimização.
+- `accepts`: Verifica se uma palavra é aceita pelo AFD.
 
-#3. Minimizar o AFD
-A função minimize é usada para minimizar o AFD resultante da conversão.
+### Funções
+- `afn_para_afd`: Converte um AFN em um AFD.
+- `print_afn`: Imprime o AFN.
+- `print_afd`: Imprime o AFD.
 
-#4. Testar Aceitação de Palavra
+## Interação do Usuário
+
+### 1. Inserir um AFN
+O usuário é solicitado a inserir:
+- **Estados**: Inserir os estados um por um.
+- **Símbolos do Alfabeto**: Inserir os símbolos do alfabeto um por um.
+- **Estado Inicial**: Definir o estado inicial.
+- **Estados Finais**: Definir os estados finais um por um.
+- **Transições**: Inserir as transições no formato `estado,símbolo,estados_destino`.
+
+### 2. Converter AFN para AFD
+A função `afn_para_afd` é usada para converter o AFN definido pelo usuário em um AFD equivalente.
+
+### 3. Minimizar o AFD
+A função `minimize` é utilizada para minimizar o AFD resultante da conversão.
+
+### 4. Testar Aceitação de Palavra
 O usuário pode inserir uma palavra para verificar se ela é aceita pelo AFN, AFD e AFD minimizado.
 
-#Exemplos de Uso
+## Exemplos de Uso
 
-Exemplo de Entrada de AFN
+### Exemplo de Entrada de AFN
 Insira um estado (ou deixe vazio para terminar): q0
 Insira um estado (ou deixe vazio para terminar): q1
 Insira um estado (ou deixe vazio para terminar): q2
@@ -73,18 +81,16 @@ Insira uma transição no formato 'estado,símbolo,estados_destino' (ou deixe va
 Insira uma transição no formato 'estado,símbolo,estados_destino' (ou deixe vazio para terminar): 
 
 Insira uma palavra para testar: ab
+A palavra `'ab'` é aceita pelo AFN, AFD e AFD minimizado.
 
-A palavra 'ab' é aceita pelo AFN
-A palavra 'ab' é aceita pelo AFD
-A palavra 'ab' é aceita pelo AFD minimizado
+## Execução do Projeto
+1. Execute o script.
+2. Siga as instruções para inserir estados, símbolos do alfabeto, estado inicial, estados finais e transições do AFN.
+3. Observe a conversão do AFN para AFD e a minimização do AFD.
+4. Teste se palavras são aceitas pelo AFN, AFD e AFD minimizado.
 
-#Execução do Projeto
-Execute o script.
-Siga as instruções para inserir estados, símbolos do alfabeto, estado inicial, estados finais e transições do AFN.
-Veja a conversão do AFN para AFD e a minimização do AFD.
-Teste se palavras são aceitas pelo AFN, AFD e AFD minimizado.
+## Requisitos
+- Python 3.x
 
-#Requisitos
-Python 3.x
-Contribuição
+## Contribuição
 Sinta-se à vontade para contribuir para o projeto abrindo issues e pull requests no GitHub.
